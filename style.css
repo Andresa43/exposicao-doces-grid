@@ -1,0 +1,266 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-global: 'Staatliches', sans-serif;
+    --ff-text: 'Palanquin', sans-serif;
+    --ff-text-sec: 'Roboto', sans-serif;
+
+    --bg-heading: #8E9AAF;
+    --fc-heading: #FFFFFF;
+    --fc-text: #23053A;
+    --bg-h1: #CBC0D3;
+    --fc-h2: #4A4E69;
+
+
+    font-size: 62.5%;
+    --fs-body: 1.6rem
+}
+
+body {
+    font-size: var(--fs-body);
+    font-family: var(--ff-global);
+}
+
+.page {
+    max-width: clamp(38.4rem , 40rem + 70vw, 140rem);
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
+
+}
+
+header {
+    background-color: var(--bg-heading);
+
+    text-align: center;
+
+    padding-bottom: 2.8rem;
+
+}
+
+header img {
+    padding: 3.2rem 12rem;
+    height: 20rem;
+
+    
+}
+
+header h1 {
+    background-color: var(--bg-h1);
+    color: var(--fc-heading);
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
+    font-size: 3.5rem;
+    line-height: 3.4rem;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+
+    padding: 0.8rem 0;
+}
+
+header p{
+    display: none;
+}
+
+main {
+    padding: 1.4rem 3.2rem 6rem;
+}
+
+main p {
+    font-family: var(--ff-text);
+    line-height: 1.5rem;
+    text-align: center;
+    padding-bottom: 6.3rem;
+    color: var(--fc-text);
+}
+
+main .wrapper{
+    display: grid;
+    gap: 3.2rem;
+
+    
+}
+
+main .wrapper .acrescimo{
+    display: none;
+}
+
+main .rodape{
+    display: none;
+}
+
+
+main .card {
+    position: relative;
+
+    animation: topdown 1.2s;
+}
+
+main .card h2 {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+
+
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 3.4rem;
+
+    letter-spacing: 0.05em;
+
+    color: var(--fc-h2);
+    background-color: #FEEAFA;
+    border-radius: 2rem;
+
+    padding: 0 2.4rem;
+
+    animation: downtop 700ms 500ms backwards;
+}
+
+@keyframes topdown {
+    0%{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes downtop{
+    0%{
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 700px){
+    main .rodape{
+        padding-top: 5rem;
+        padding-bottom: 4.6rem;
+        display: block;
+    }
+
+    main .rodape span{
+        font-weight: bold;
+        font-family: var(--ff-text-sec);
+    }
+
+    .wrapper{
+        grid-template-areas: 
+        "A B"
+        "C B"
+        "C D"
+        "E F";
+       }
+    
+       .wrapper .card:nth-child(1){
+        grid-area: A;
+       }
+    
+       .wrapper .card:nth-child(2){
+        grid-area: B;
+       }
+    
+       .wrapper .card:nth-child(3){
+        grid-area: C;
+       }
+    
+       .wrapper .card:nth-child(4){
+        grid-area: D;
+       }
+    
+       .wrapper .card:nth-child(5){
+        grid-area: E;
+       }
+    
+       .wrapper .card:nth-child(6){
+        grid-area: F;
+       }
+}
+
+@media (min-width: 900px){
+
+    .page{
+        display: flex;
+
+    }
+
+    main{
+        padding: 6.4rem 8.1rem 0;
+    }
+
+    main .text{
+        display: none;
+    }
+
+    
+
+    header{
+        width: 37.7rem;
+        /* height: 72rem; */
+    }
+
+    header img{
+        padding: 3.2rem 6rem;
+    }
+
+
+    header p{
+        display: inline-block;
+        color: var(--fc-heading);
+        width: 27.5rem;
+        font-family: var(--ff-text-sec);
+        padding-top: 3.2rem
+
+    }
+
+    main .wrapper .acrescimo{
+        display: inline-block;
+    }
+
+   .wrapper{
+    grid-template-areas: 
+    "A B C"
+    "D B E"
+    "D F E";
+   }
+
+   .wrapper .card:nth-child(1){
+    grid-area: A;
+   }
+
+   .wrapper .card:nth-child(2){
+    grid-area: B;
+   }
+
+   .wrapper .card:nth-child(3){
+    grid-area: C;
+   }
+
+   .wrapper .card:nth-child(4){
+    grid-area: D;
+   }
+
+   .wrapper .card:nth-child(5){
+    grid-area: E;
+   }
+
+   .wrapper .card:nth-child(6){
+    grid-area: F;
+   }
+}
